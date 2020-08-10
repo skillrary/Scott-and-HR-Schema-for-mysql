@@ -1,37 +1,8 @@
-Rem  Copyright (c) 2016 by Oracle Corporation
-Rem
-Rem  You may not use the identified files except in compliance with The MIT
-Rem  License (the "License.")
-Rem
-Rem  You may obtain a copy of the License at
-Rem  https://github.com/oracle/Oracle.NET/blob/master/LICENSE
-Rem
-Rem  Unless required by applicable law or agreed to in writing, software
-Rem  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-Rem  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-Rem
-Rem  See the License for the specific language governing permissions and
-Rem  limitations under the License.
-Rem
 Rem  NAME
 REM    scott.sql
 Rem  
-Rem  DESCRIPTION
-Rem    SCOTT is a database user whose schema is used for Oracle code demonstrations
-Rem    Be sure to replace <PASSWORD> on lines 31 and 34 with your preferred password. 
-Rem    Historically, "tiger" has been SCOTT schema's password.
 
 
-SET TERMOUT OFF
-SET ECHO OFF
-
-rem CONGDON    Invoked in RDBMS at build time.	 29-DEC-1988
-rem OATES:     Created: 16-Feb-83
-
-GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO SCOTT IDENTIFIED BY <PASSWORD>;
-ALTER USER SCOTT DEFAULT TABLESPACE USERS;
-ALTER USER SCOTT TEMPORARY TABLESPACE TEMP;
-CONNECT SCOTT/<PASSWORD>
 DROP TABLE DEPT;
 CREATE TABLE DEPT
        (DEPTNO NUMBER(2) CONSTRAINT PK_DEPT PRIMARY KEY,
@@ -102,5 +73,3 @@ INSERT INTO SALGRADE VALUES (4,2001,3000);
 INSERT INTO SALGRADE VALUES (5,3001,9999);
 COMMIT;
 
-SET TERMOUT ON
-SET ECHO ON
